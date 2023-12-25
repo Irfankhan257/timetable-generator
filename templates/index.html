@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Timetable Generator</title>
+  </head>
+  <body>
+    <form action="/generate_schedule" method="post">
+      <div class="course-details">
+        <h3>Course Details</h3>
+
+        <!-- Course ID -->
+        <label for="courseID">Course ID:</label>
+        <input type="text" id="courseID" name="courseID" required />
+        <label for="classes">Enter courses (comma-separated):</label>
+        <input type="text" id="classes" name="classes" required />
+      </div>
+
+      <label for="faculties">Enter faculties (comma-separated):</label>
+      <input type="text" id="faculties" name="faculties" required />
+
+      <label for="resources">Enter resources (comma-separated):</label>
+      <input type="text" id="resources" name="resources" required />
+
+      <label for="time_slots">Enter time slots (comma-separated):</label>
+      <input type="text" id="time_slots" name="time_slots" required />
+
+      <div class="legend">
+        <p>Time Slots Legend (from 1-5 in vertical order ):</p>
+        <ul type="text">
+          <li type="text">08:00-09:00</li>
+          <li type="text">09:00-10:00</li>
+          <li type="text">10:00-11:00</li>
+          <li type="text">11:00-12:00</li>
+          <li type="text">01:00-02:00</li>
+        </ul>
+      </div>
+
+      <label for="rooms">Enter rooms (comma-separated):</label>
+      <input type="text" id="rooms" name="rooms" required />
+
+      <label for="departments">Enter departments (comma-separated):</label>
+      <input type="text" id="departments" name="departments" required />
+
+      <label for="semesters">Enter Semester (comma-separated):</label>
+      <input type="text" id="semesters" name="semesters" required />
+
+      <button type="submit">Generate Schedule</button>
+    </form>
+  </body>
+</html>
